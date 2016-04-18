@@ -13,6 +13,7 @@
 	* added [Capybara](https://github.com/jnicklas/capybara)
 	* added [Haml](http://https://github.com/haml/haml)
 	* added [Shoulda](https://github.com/thoughtbot/shoulda)
+	* added [Devise](https://github.com/plataformatec/devise)
 
 * Database creation
 	* PostgresSQL
