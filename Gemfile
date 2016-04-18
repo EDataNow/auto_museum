@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'haml', '~> 4.0.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use postgresql as the database for Active Record
@@ -48,6 +48,7 @@ end
 # Add RSpec to Gemfile
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
+  gem 'shoulda-matchers'
 end
 #
 # IMPORTANT! Some of the defaults have changed in Capybara 2.1. If you're experiencing failures,

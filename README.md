@@ -1,5 +1,6 @@
 # Auto Museum
 
+
 ## Things you may want to know:
 
 * Ruby
@@ -8,6 +9,9 @@
 
 * Configuration
 	* **standard**
+	* added [Rspec](https://github.com/rspec/rspec-rails)
+	* added [Capybara](https://github.com/jnicklas/capybara)
+	* added [Haml](http://https://github.com/haml/haml)
 
 * Database creation
 	* PostgresSQL
@@ -18,3 +22,13 @@
 	* bundle exec rspec
 
 * Deployment instructions
+
+## HAML instructions: 
+
+* to compile Haml -> HTML
+	* haml document.haml
+* for more info 
+	* haml --help
+
+**For info checkout there [github](https://github.com/haml/haml) **
+
