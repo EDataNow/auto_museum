@@ -12,6 +12,7 @@
 	* added [Rspec](https://github.com/rspec/rspec-rails)
 	* added [Capybara](https://github.com/jnicklas/capybara)
 	* added [Haml](http://https://github.com/haml/haml)
+	* added [Shoulda](https://github.com/thoughtbot/shoulda)
 
 * Database creation
 	* PostgresSQL
