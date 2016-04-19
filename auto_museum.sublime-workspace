@@ -1,0 +1,355 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"fla",
+				"flash"
+			],
+			[
+				"un",
+				"unless	unless … end"
+			],
+			[
+				"se",
+				"sessions"
+			],
+			[
+				"user",
+				"user_id"
+			],
+			[
+				"sub",
+				"subject"
+			],
+			[
+				"config",
+				"configure"
+			],
+			[
+				"pro",
+				"products"
+			],
+			[
+				"line",
+				"line_items"
+			],
+			[
+				"assert",
+				"assert_redirected_to"
+			],
+			[
+				"ass",
+				"assert_select"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"cart",
+				"cart_path"
+			],
+			[
+				"prod",
+				"product"
+			],
+			[
+				"Pord",
+				"product"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 327.0,
+		"last_filter": "package in",
+		"selected_items":
+		[
+			[
+				"package in",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 143.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/tyler/rails/auto_museum",
+		"/home/tyler/rails/auto_museum/app"
+	],
+	"file_history":
+	[
+		"/home/tyler/.bashrc",
+		"/home/tyler/rails/TestProject/android/app/build.gradle",
+		"/home/tyler/rails/auto_museum/config/database.yml",
+		"/home/tyler/rails/auto_museum/app/models/story.rb",
+		"/home/tyler/rails/auto_museum/app/models/chapter.rb",
+		"/home/tyler/rails/auto_museum notes",
+		"/home/tyler/rails/auto_museum/config/secrets.yml",
+		"/home/tyler/rails/auto_museum/config/environments/development.rb",
+		"/home/tyler/Android/Sdk/build-tools/22.0.1/aapt",
+		"/home/tyler/rails/TestProject/android/build.gradle",
+		"/home/tyler/rails/auto_museum/.gitignore",
+		"/home/tyler/android-studio/bin/studio.sh",
+		"/home/tyler/rails/Untitled Document",
+		"/home/tyler/rails/podcast-feed-rails/app/assets/javascripts/application.js",
+		"/home/tyler/rails/podcast-feed-rails/scripts/podcasts.js",
+		"/home/tyler/rails/podcast-feed-rails/app/assets/stylesheets/application.css",
+		"/home/tyler/rails/podcast-feed-rails/config/routes.rb",
+		"/home/tyler/rails/podcast-feed-rails/app/views/layouts/application.html.erb",
+		"/home/tyler/rails/podcast-feed-rails/podcasts.html",
+		"/home/tyler/rails/podcast-feed-rails/app/assets/stylesheets/podcast_feed.scss",
+		"/home/tyler/rails/podcast-feed-rails/css/podcast.css",
+		"/home/tyler/ruby-getting-started/app/views/welcome/index.erb",
+		"/home/tyler/ruby-getting-started/Gemfile",
+		"/home/tyler/ruby-getting-started/config/puma.rb",
+		"/home/tyler/ruby-getting-started/app/models/widget.rb",
+		"/home/tyler/ruby-getting-started/app/controllers/widgets_controller.rb",
+		"/home/tyler/ruby-getting-started/app/controllers/welcome_controller.rb",
+		"/home/tyler/ruby-getting-started/app/controllers/application_controller.rb",
+		"/home/tyler/rails/depot/app/views/users/_form.html.erb",
+		"/home/tyler/rails/depot/app/models/order.rb",
+		"/home/tyler/rails/depot/app/views/users/index.html.erb",
+		"/home/tyler/rails/depot/app/views/sessions/new.html.erb",
+		"/home/tyler/rails/depot/app/controllers/admin_controller.rb",
+		"/home/tyler/rails/depot/config/routes.rb",
+		"/home/tyler/rails/depot/test/controllers/sessions_controller_test.rb",
+		"/home/tyler/rails/depot/app/views/admin/index.html.erb",
+		"/home/tyler/rails/depot/app/controllers/store_controller.rb",
+		"/home/tyler/rails/depot/app/models/user.rb",
+		"/home/tyler/rails/depot/app/controllers/users_controller.rb",
+		"/home/tyler/rails/depot/test/controllers/users_controller_test.rb",
+		"/home/tyler/rails/depot/test/fixtures/users.yml",
+		"/home/tyler/rails/depot/app/helpers/application_helper.rb",
+		"/home/tyler/rails/depot/app/controllers/sessions_controller.rb",
+		"/home/tyler/rails/depot/app/controllers/application_controller.rb",
+		"/home/tyler/rails/depot/app/controllers/carts_controller.rb",
+		"/home/tyler/rails/depot/app/controllers/line_items_controller.rb",
+		"/home/tyler/rails/depot/app/views/layouts/application.html.erb",
+		"/home/tyler/rails/depot/test/test_helper.rb",
+		"/home/tyler/rails/depot/app/controllers/orders_controller.rb",
+		"/home/tyler/rails/depot/db/seeds.rb",
+		"/media/tyler/Windows8_OS/Rails/depot_demo/rails40/depot_r/app/controllers/sessions_controller.rb",
+		"/media/tyler/Windows8_OS/Rails/depot_demo/rails40/depot_r/test/controllers/sessions_controller_test.rb",
+		"/media/tyler/Windows8_OS/Rails/depot_demo/rails40/depot_r/app/views/sessions/new.html.erb",
+		"/media/tyler/Windows8_OS/Rails/depot_demo/rails40/depot_r/app/views/users/_form.html.erb",
+		"/home/tyler/rails/depot/Gemfile",
+		"/media/tyler/Windows8_OS/Rails/depot_demo/rails40/depot_r/test/integration/user_stories_test.rb",
+		"/home/tyler/rails/depot/test/integration/user_stories_test.rb",
+		"/home/tyler/rails/depot/app/views/order_notifier/received.text.erb",
+		"/home/tyler/rails/depot/app/views/carts/_cart.html.erb",
+		"/home/tyler/rails/depot/app/views/line_items/_line_item.text.erb",
+		"/home/tyler/rails/depot/test/controllers/orders_controller_test.rb",
+		"/home/tyler/rails/depot/config/environments/development.rb",
+		"/home/tyler/rails/depot/app/views/order_notifier/shipped.html.erb",
+		"/home/tyler/rails/depot/app/mailers/order_notifier.rb",
+		"/home/tyler/rails/depot/test/mailers/order_notifier_test.rb",
+		"/media/tyler/Windows8_OS/Rails/depot_demo/rails40/depot_r/test/mailers/order_notifier_test.rb",
+		"/home/tyler/rails/depot/app/views/line_items/_line_item.erb",
+		"/home/tyler/rails/depot/test/fixtures/line_items.yml",
+		"/home/tyler/rails/depot/test/fixtures/orders.yml",
+		"/home/tyler/rails/depot/app/models/line_item.rb",
+		"/home/tyler/rails/depot/app/views/orders/_form.html.erb",
+		"/home/tyler/rails/depot/app/views/orders/new.html.erb",
+		"/home/tyler/rails/depot/app/models/product.rb",
+		"/home/tyler/rails/depot/app/views/products/who_bought.atom.builder",
+		"/home/tyler/rails/depot/app/views/line_items/create.js.erb",
+		"/home/tyler/rails/depot/app/views/store/index.html.erb",
+		"/home/tyler/Desktop/cool.html",
+		"/media/tyler/Windows8_OS/Rails/depot_demo/rails40/depot_p/app/controllers/products_controller.rb",
+		"/home/tyler/rails/depot/app/controllers/products_controller.rb",
+		"/media/tyler/Windows8_OS/Rails/depot_demo/rails40/depot_p/config/routes.rb",
+		"/media/tyler/Windows8_OS/Rails/depot_demo/rails40/depot_o/app/views/products/who_bought.atom.builder",
+		"/home/tyler/rails/depot/app/assets/stylesheets/application.css.scss",
+		"/media/tyler/Windows8_OS/Rails/depot_demo/rails40/depot_o/app/assets/stylesheets/application.css.scss",
+		"/home/tyler/rails/depot/app/assets/javascripts/application.js",
+		"/home/tyler/rails/depot/test/controllers/store_controller_test.rb",
+		"/home/tyler/rails/depot/test/controllers/line_items_controller_test.rb",
+		"/home/tyler/rails/depot/app/assets/javascripts/store.coffee",
+		"/media/tyler/Windows8_OS/Rails/depot_demo/rails40/depot_o/test/controllers/line_items_controller_test.rb",
+		"/home/tyler/rails/depot/test/controllers/carts_controller_test.rb",
+		"/home/tyler/rails/depot/log/development.log",
+		"/home/tyler/rails/depot/test/controllers/products_controller_test.rb",
+		"/home/tyler/rails/depot/app/models/cart.rb",
+		"/home/tyler/rails/depot/app/views/carts/show.html.erb",
+		"/home/tyler/rails/depot/app/assets/stylesheets/scaffolds.scss",
+		"/home/tyler/rails/depot/app/assets/stylesheets/store.scss",
+		"/home/tyler/rails/depot/app/assets/stylesheets/carts.scss",
+		"/home/tyler/rails/depot/app/views/carts/_line_item.erb",
+		"/home/tyler/rails/depot/app/views/line_items/show.html.erb",
+		"/home/tyler/rails/depot/app/views/carts/_show.html.erb",
+		"/media/tyler/Windows8_OS/Rails/depot_demo/rails40/depot_i/app/views/carts/show.html.erb",
+		"/home/tyler/rails/depot/log/test.log",
+		"/home/tyler/rails/depot/db/migrate/20160412151418_combine_items_in_cart.rb",
+		"/media/tyler/Windows8_OS/Rails/depot_demo/rails40/depot_g/db/migrate/20121130000005_combine_items_in_cart.rb",
+		"/home/tyler/rails/depot/app/assets/stylesheets/line_items.scss",
+		"/home/tyler/rails/depot/app/controllers/concerns/current_cart.rb",
+		"/home/tyler/rails/depot/db/migrate/20160412150243_add_quantity_to_line_items.rb",
+		"/home/tyler/rails/depot/test/fixtures/products.yml",
+		"/home/tyler/rails/depot/app/views/products/index.html.erb",
+		"/home/tyler/rails/depot/app/assets/stylesheets/application.css",
+		"/home/tyler/rails/depot/test/models/product_test.rb",
+		"/media/tyler/Windows8_OS/Rails/depot_demo/rails40/depot_e/app/models/product.rb",
+		"/usr/share/applications/defaults.list",
+		"/media/tyler/Windows8_OS/Rails/depot_demo/rails40/depot_e/test/models/product_test.rb",
+		"/media/tyler/Windows8_OS/Rails/depot_demo/rails40/depot_e/test/controllers/products_controller_test.rb",
+		"/home/tyler/rails/depot/depot.sublime-project",
+		"/media/tyler/Windows8_OS/Rails/depot/Gemfile"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"order",
+			"orderNot",
+			"width",
+			"gedit"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"sublime_text"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "auto_museum.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"index",
+				"app/views/welcome/index.erb"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 228.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
