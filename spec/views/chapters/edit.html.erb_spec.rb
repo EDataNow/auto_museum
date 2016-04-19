@@ -2,13 +2,17 @@ require 'rails_helper'
 
 RSpec.describe "chapters/edit", type: :view do
   before(:each) do
+    @story = assign(:story, Story.create!(
+      :title => "Title",
+      :description => "MyText"
+    ))
     @chapter = assign(:chapter, Chapter.create!(
       :title => "MyString",
       :position => 1,
       :video => "MyString",
       :pdf => "MyString",
       :audio => "MyString",
-      :story => nil
+      :story => @story
     ))
   end
 
