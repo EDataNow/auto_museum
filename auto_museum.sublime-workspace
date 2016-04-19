@@ -71,23 +71,18 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 327.0,
-		"last_filter": "package in",
+		"height": 0.0,
+		"last_filter": "",
 		"selected_items":
 		[
-			[
-				"package in",
-				"Package Control: Install Package"
-			]
 		],
-		"width": 467.0
+		"width": 0.0
 	},
 	"console":
 	{
-		"height": 143.0,
+		"height": 0.0,
 		"history":
 		[
-			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
 		]
 	},
 	"distraction_free":
@@ -101,33 +96,10 @@
 	},
 	"expanded_folders":
 	[
-		"/home/tyler/rails/auto_museum",
-		"/home/tyler/rails/auto_museum/app"
+		"/home/tyler/rails/auto_museum"
 	],
 	"file_history":
 	[
-		"/home/tyler/.bashrc",
-		"/home/tyler/rails/TestProject/android/app/build.gradle",
-		"/home/tyler/rails/auto_museum/config/database.yml",
-		"/home/tyler/rails/auto_museum/app/models/story.rb",
-		"/home/tyler/rails/auto_museum/app/models/chapter.rb",
-		"/home/tyler/rails/auto_museum notes",
-		"/home/tyler/rails/auto_museum/config/secrets.yml",
-		"/home/tyler/rails/auto_museum/config/environments/development.rb",
-		"/home/tyler/Android/Sdk/build-tools/22.0.1/aapt",
-		"/home/tyler/rails/TestProject/android/build.gradle",
-		"/home/tyler/rails/auto_museum/.gitignore",
-		"/home/tyler/android-studio/bin/studio.sh",
-		"/home/tyler/rails/Untitled Document",
-		"/home/tyler/rails/podcast-feed-rails/app/assets/javascripts/application.js",
-		"/home/tyler/rails/podcast-feed-rails/scripts/podcasts.js",
-		"/home/tyler/rails/podcast-feed-rails/app/assets/stylesheets/application.css",
-		"/home/tyler/rails/podcast-feed-rails/config/routes.rb",
-		"/home/tyler/rails/podcast-feed-rails/app/views/layouts/application.html.erb",
-		"/home/tyler/rails/podcast-feed-rails/podcasts.html",
-		"/home/tyler/rails/podcast-feed-rails/app/assets/stylesheets/podcast_feed.scss",
-		"/home/tyler/rails/podcast-feed-rails/css/podcast.css",
-		"/home/tyler/ruby-getting-started/app/views/welcome/index.erb",
 		"/home/tyler/ruby-getting-started/Gemfile",
 		"/home/tyler/ruby-getting-started/config/puma.rb",
 		"/home/tyler/ruby-getting-started/app/models/widget.rb",
@@ -152,6 +124,7 @@
 		"/home/tyler/rails/depot/app/controllers/application_controller.rb",
 		"/home/tyler/rails/depot/app/controllers/carts_controller.rb",
 		"/home/tyler/rails/depot/app/controllers/line_items_controller.rb",
+		"/home/tyler/ruby-getting-started/app/views/welcome/index.erb",
 		"/home/tyler/rails/depot/app/views/layouts/application.html.erb",
 		"/home/tyler/rails/depot/test/test_helper.rb",
 		"/home/tyler/rails/depot/app/controllers/orders_controller.rb",
@@ -225,7 +198,7 @@
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 25.0
 	},
 	"find_in_files":
 	{
@@ -239,6 +212,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"def authorize",
 			"order",
 			"orderNot",
 			"width",
@@ -314,10 +288,6 @@
 		"last_filter": "",
 		"selected_items":
 		[
-			[
-				"index",
-				"app/views/welcome/index.erb"
-			]
 		],
 		"width": 0.0
 	},

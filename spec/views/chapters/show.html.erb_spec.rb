@@ -2,13 +2,17 @@ require 'rails_helper'
 
 RSpec.describe "chapters/show", type: :view do
   before(:each) do
+    @story = assign(:story, Story.create!(
+      :title => "Title",
+      :description => "MyText"
+    ))
     @chapter = assign(:chapter, Chapter.create!(
       :title => "Title",
       :position => 1,
       :video => "Video",
       :pdf => "Pdf",
       :audio => "Audio",
-      :story => nil
+      :story => @story
     ))
   end
 
@@ -19,6 +23,6 @@ RSpec.describe "chapters/show", type: :view do
     expect(rendered).to match(/Video/)
     expect(rendered).to match(/Pdf/)
     expect(rendered).to match(/Audio/)
-    expect(rendered).to match(//)
+    expect(rendered).to match(/Title/)
   end
 end
