@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160419145822) do
+ActiveRecord::Schema.define(version: 20160419153416) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "chapters", force: :cascade do |t|
-    t.string   "name"
+    t.string   "title"
     t.string   "video"
     t.string   "pdf"
     t.string   "audio"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20160419145822) do
   add_index "chapters", ["story_id"], name: "index_chapters_on_story_id", using: :btree
 
   create_table "stories", force: :cascade do |t|
-    t.string   "name"
+    t.string   "title"
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
