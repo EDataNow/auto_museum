@@ -11,10 +11,13 @@ class Chapter < ActiveRecord::Base
 # Think about how necessary it is to have uniqueness accross chapters
 # for media_type
   validates :title, :position, :story,  presence: true
-	validates :title, uniqueness: true
-	validates :title, length: { minimum: 5 }
+  validates :title, uniqueness: true
+  validates :title, length: { minimum: 5 }
 
   validate :media_type
+
+  # this breaks the ordering of chapters
+  #mount_uploader :video, VideoUploader
 
   private
 
@@ -37,6 +40,14 @@ class Chapter < ActiveRecord::Base
   		chapter_a.save
   		chapter_b.save
   	end
+  end
+
+  def self.get_chapter_above(chapter)
+  	return chapter.story.chapters.find_by(position: chapter.position - 1)
+  end
+
+  def self.get_chapter_below(chapter)
+  	return chapter.story.chapters.find_by(position: chapter.position + 1)
   end
 
   def media_type_valid?(media_type)
