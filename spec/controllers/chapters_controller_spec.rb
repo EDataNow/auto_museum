@@ -23,18 +23,50 @@ RSpec.describe ChaptersController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # Chapter. As you add validations to Chapter, be sure to
   # adjust the attributes here as well.
+
+  before do
+    Story.destroy_all
+  end
+
+  let(:story) { Story.create!(title: "StoryTitle", description: "StoryDescription")}
+
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {
+         title:   'ChapterTitle',
+      position:   1,
+         video:   'img/video.mp4',
+           pdf:   'pdf/pdf.pdf',
+         audio:   'audio/audio.mp3',
+      story_id:   story.id
+    }
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {
+         title:   '',
+      position:   nil,
+         video:   '',
+           pdf:   '',
+         audio:   '',
+      story_id:   nil
+
+    }
   }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # ChaptersController. Be sure to keep this updated too.
-  let(:valid_session) { {} }
+  let(:valid_session) {
+    {
+         title:   'StoryChapter',
+      position:   1,
+         video:   'img/video.mp4',
+           pdf:   'pdf/pdf.pdf',
+         audio:   'audio/audio.mp3',
+      story_id:   story.id
+
+    }
+  }
 
   describe "GET #index" do
     it "assigns all chapters as @chapters" do
@@ -103,14 +135,22 @@ RSpec.describe ChaptersController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {
+             title:   'StoryChapter',
+          position:   1,
+             video:   'img/video.mp4',
+               pdf:   'pdf/pdf.pdf',
+             audio:   'audio/audio.mp3',
+          story_id:   story.id
+
+        }
       }
 
       it "updates the requested chapter" do
         chapter = Chapter.create! valid_attributes
         put :update, {:id => chapter.to_param, :chapter => new_attributes}, valid_session
         chapter.reload
-        skip("Add assertions for updated state")
+        expect(assigns(:chapter)).to eq(chapter)
       end
 
       it "assigns the requested chapter as @chapter" do

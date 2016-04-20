@@ -1,3 +1,38 @@
+# t.string   "title"
+# t.integer  "position"
+# t.string   "video"
+# t.string   "pdf"
+# t.string   "audio"
+# t.integer  "story_id"
+
 class Chapter < ActiveRecord::Base
+
   belongs_to :story
+# Think about how necessary it is to have uniqueness accross chapters
+# for media_type
+  validates :title, :position, :story,  presence: true
+	validates :title, uniqueness: true
+	validates :title, length: { minimum: 5 }
+
+  validate :media_type
+
+  private
+
+  def media_type
+    require 'uri'
+
+    any_invalid = [video, pdf, audio].any? do |media_type|
+      media_type_valid?(media_type) == false
+    end
+# errors are a hash and by adding :media_type as a key it allows me to
+# use to search within the assert tests.
+    if any_invalid
+      errors.add(:media_type, 'At Least One of Pdf, Video or Audit is needed')
+    end
+  end
+
+  def media_type_valid?(media_type)
+    media_type.present?
+  end
+
 end
