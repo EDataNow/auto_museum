@@ -4,7 +4,8 @@ class ChaptersController < ApplicationController
   # GET /chapters
   # GET /chapters.json
   def index
-    @chapters = Story.find(:story_id).chapters
+    @chapters = Chapter.all
+    #@chapters = Story.find(:story_id).chapters
   end
 
   # GET /chapters/1
