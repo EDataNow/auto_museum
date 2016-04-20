@@ -37,7 +37,8 @@ class Chapter < ActiveRecord::Base
   		chapter_a.save
   		chapter_b.save
   	end
-  	
+  end
+
   def media_type_valid?(media_type)
     media_type.present?
   end
