@@ -24,11 +24,13 @@ RSpec.describe StoriesController, type: :controller do
   # Story. As you add validations to Story, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+     { title: 'StoryTitle', 
+     description: 'Description' }
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+     { title: '', 
+     description: '' }
   }
 
   # This should return the minimal set of values that should be in the session
@@ -103,14 +105,18 @@ RSpec.describe StoriesController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        { title: 'NewStoryTitle', 
+          description: 'NewDescription' }
       }
+
 
       it "updates the requested story" do
         story = Story.create! valid_attributes
         put :update, {:id => story.to_param, :story => new_attributes}, valid_session
         story.reload
-        skip("Add assertions for updated state")
+
+        assert story.title, "NewTitle"
+        assert story.description, "NewDescription"
       end
 
       it "assigns the requested story as @story" do

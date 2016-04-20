@@ -9,8 +9,21 @@
   <strong>Description:</strong>
   <%= @story.description %>
 </p>
+<%= link_to 'Edit', edit_story_path(@story) %>
 
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Position</th>
+      <th>Video</th>
+      <th>Pdf</th>
+      <th>Audio</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
 
+<%= render(@story.chapters) %>
+</table>
 
-<%= link_to 'Edit', edit_story_path(@story) %> |
 <%= link_to 'Back', stories_path %>
