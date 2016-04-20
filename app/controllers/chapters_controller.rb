@@ -4,7 +4,7 @@ class ChaptersController < ApplicationController
   # GET /chapters
   # GET /chapters.json
   def index
-    @chapters = Chapter.all
+    @chapters = Story.find(:story_id).chapters
   end
 
   # GET /chapters/1
@@ -59,6 +59,21 @@ class ChaptersController < ApplicationController
       format.html { redirect_to chapters_url, notice: 'Chapter was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def up
+
+    chapter_a = Chapter.find(params[:chapter_a])
+    chapter_b = chapter_a.story.chapters.find_by(position: chapter_a.position - 1)
+    Chapter.swap_position(chapter_a, chapter_b)
+    redirect_to chapter_a.story
+  end
+
+  def down
+    chapter_a = Chapter.find(params[:chapter_a])
+    chapter_b = chapter_a.story.chapters.find_by(position: chapter_a.position + 1)
+    Chapter.swap_position(chapter_a, chapter_b)
+    redirect_to chapter_a.story
   end
 
   private
