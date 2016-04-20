@@ -124,6 +124,7 @@ RSpec.describe StoriesController, type: :controller do
           }
       }
 
+
       it "updates the requested story" do
         story = Story.create! valid_attributes
         put :update, {:id => story.to_param, :story => new_attributes}, valid_session

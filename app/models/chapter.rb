@@ -34,5 +34,4 @@ class Chapter < ActiveRecord::Base
   def media_type_valid?(media_type)
     media_type.present?
   end
-
 end
