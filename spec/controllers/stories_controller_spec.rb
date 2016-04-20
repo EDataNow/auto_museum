@@ -23,20 +23,33 @@ RSpec.describe StoriesController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # Story. As you add validations to Story, be sure to
   # adjust the attributes here as well.
+  before do
+    Story.destroy_all
+  end
+
   let(:valid_attributes) {
-     { title: 'StoryTitle', 
-     description: 'Description' }
+    {
+      title: 'StoryChapter',
+      description: 'StoryDescription'
+    }
   }
 
   let(:invalid_attributes) {
-     { title: '', 
-     description: '' }
+    {
+      title: '',
+      description: ''
+    }
   }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # StoriesController. Be sure to keep this updated too.
-  let(:valid_session) { {} }
+  let(:valid_session) {
+    {
+      title: 'StoryChapter',
+      description: 'StoryDescription'
+    }
+  }
 
   describe "GET #index" do
     it "assigns all stories as @stories" do
@@ -105,8 +118,10 @@ RSpec.describe StoriesController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        { title: 'NewStoryTitle', 
-          description: 'NewDescription' }
+          {
+            title: 'NewStoryChapter',
+            description: 'NewStoryDescription'
+          }
       }
 
 
@@ -114,9 +129,8 @@ RSpec.describe StoriesController, type: :controller do
         story = Story.create! valid_attributes
         put :update, {:id => story.to_param, :story => new_attributes}, valid_session
         story.reload
-
-        assert story.title, "NewTitle"
-        assert story.description, "NewDescription"
+        expect(assigns(:story)).to eq(story)
+        # skip("Add assertions for updated state")
       end
 
       it "assigns the requested story as @story" do

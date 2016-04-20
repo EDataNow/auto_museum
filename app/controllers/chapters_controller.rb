@@ -62,7 +62,6 @@ class ChaptersController < ApplicationController
   end
 
   def up
-
     chapter_a = Chapter.find(params[:chapter_a])
     chapter_b = chapter_a.story.chapters.find_by(position: chapter_a.position - 1)
     Chapter.swap_position(chapter_a, chapter_b)
@@ -84,6 +83,8 @@ class ChaptersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def chapter_params
-      params.require(:chapter).permit(:title, :position, :video, :pdf, :audio, :story_id)
+      params.require(:chapter).permit(:title, :position,
+                                      :video, :pdf,
+                                      :audio, :story_id)
     end
 end
