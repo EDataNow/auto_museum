@@ -70,7 +70,3 @@ end
 #     end
 #
 # Details here: http://www.elabs.se/blog/60-introducing-capybara-2-1
-
-group :test do
-  gem 'capybara', '~> 2.2.0'
-end
