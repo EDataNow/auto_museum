@@ -9,11 +9,15 @@
         <td><%= link_to 'Edit', edit_chapter_path(chapter) %></td>
         <td><%= link_to 'Delete', chapter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td>
-          <%= link_to up_path(chapter_a: chapter), class: "btn btn-default" do %>
-            &uarr;
+          <% if Chapter.get_chapter_above chapter %>
+            <%= link_to up_path(chapter: chapter), class: "btn btn-default" do %>
+              &uarr;
+            <% end %>
           <% end %>
-          <%= link_to down_path(chapter_a: chapter), class: "btn btn-default" do %>
-            &darr;
+          <% if Chapter.get_chapter_below chapter %>
+            <%= link_to down_path(chapter: chapter), class: "btn btn-default" do %>
+              &darr;
+            <% end %>
           <% end %>
         </td>
       </tr>

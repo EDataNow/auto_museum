@@ -79,14 +79,14 @@ class ChaptersController < ApplicationController
   end
 
   def up
-    chapter_a = Chapter.find(params[:chapter_a])
+    chapter_a = Chapter.find(params[:chapter])
     chapter_b = Chapter.get_chapter_above chapter_a
     Chapter.swap_position(chapter_a, chapter_b)
     redirect_to chapter_a.story
   end
 
   def down
-    chapter_a = Chapter.find(params[:chapter_a])
+    chapter_a = Chapter.find(params[:chapter])
     chapter_b = Chapter.get_chapter_below chapter_a
     Chapter.swap_position(chapter_a, chapter_b)
     redirect_to chapter_a.story

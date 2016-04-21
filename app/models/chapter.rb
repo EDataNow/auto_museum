@@ -38,9 +38,14 @@ class Chapter < ActiveRecord::Base
 
   def self.swap_position(chapter_a, chapter_b)
   	unless (chapter_a == nil or chapter_b == nil)
-  		chapter_a.position, chapter_b.position = chapter_b.position, chapter_a.position
+      @position_a = chapter_a.position
+      @position_b = chapter_b.position
+      chapter_a.position = chapter_a.story.chapters.count + 1
+      chapter_a.save
+      chapter_b.position = @position_a
+      chapter_b.save
+  		chapter_a.position = @position_b
   		chapter_a.save
-  		chapter_b.save
   	end
   end
 
