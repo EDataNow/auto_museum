@@ -1,29 +1,39 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @story.title %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @story.description %>
-</p>
-<%= link_to 'Edit', edit_story_path(@story) %>
+<div class="jumbotron">
+  <div class="container">
+    <h1>Story Details</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Position</th>
-      <th>Video</th>
-      <th>Pdf</th>
-      <th>Audio</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <p>
+      <strong>Title:</strong>
+      <%= @story.title %>
+    </p>
+    <p>
+      <strong>Description:</strong>
+      <%= @story.description %>
+    </p>
+  </div>
+</div>
 
-<%= render(@story.chapters) %>
+<div class="container">
+  <p><%= link_to 'New Chapter', new_chapter_path %></p>
+  <br><br>
+  <table class="table table-stripped">
+    <thead>
+      <tr>
+        <th>Position</th>
+        <th>Title</th>
+        <th>Video</th>
+        <th>Pdf</th>
+        <th>Audio</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+  <%= render(@story.chapters) %>
+
 </table>
-
+<%= link_to 'Edit', edit_story_path(@story) %> |
 <%= link_to 'Back', stories_path %>
+</div>

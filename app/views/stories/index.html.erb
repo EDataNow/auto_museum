@@ -1,8 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Stories</h1>
-
-<table>
+<div class="jumbotron">
+  <div class="container">
+    <h1>Story List</h1>
+  </div>
+</div>
+<div class="container">
+  <p><%= link_to 'New Story', new_story_path %></p>
+  <br><br>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Title</th>
@@ -23,7 +29,4 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Story', new_story_path %>
+</div>

@@ -11,31 +11,32 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title ,{class: "form-control"}%>
   </div>
-  <div class="field">
-    <%#= f.label :position %><br>
-    <%#= f.number_field :position %>
-  </div>
-  <div class="field">
+
+  <div class="form-group">
     <%= f.label :video %><br>
-    <%= f.text_field :video %>
+    <%= f.text_field :video,{class: "form-control"} %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :pdf %><br>
-    <%= f.text_field :pdf %>
+    <%= f.text_field :pdf,{class: "form-control"} %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :audio %><br>
-    <%= f.text_field :audio %>
+    <%= f.text_field :audio,{class: "form-control"} %>
   </div>
-  <div class="field">
-    <%= f.label :story_id %><br>
-    <%= f.text_field :story_id %>
+  <div class="form-group">
+    <%= f.label :story %><br>
+    <%= f.collection_select :story_id, @stories, :id, :title, {}, {class: "form-control"} %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+<!-- <div class="field"> -->
+  <%#= f.label :position %>
+  <%#= f.number_field :position %>
+<!-- </div> -->

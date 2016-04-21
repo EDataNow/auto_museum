@@ -1,8 +1,17 @@
 <p id="notice"><%= notice %></p>
+<div class="jumbotron">
+  <div class="container">
+    <h1>Chapter List</h1>
+  </div>
+</div>
 
-<h1>Listing Chapters</h1>
 
-<table>
+
+<div class="container">
+  <p><%= link_to 'New Chapter', new_chapter_path %></p>
+  <br>
+  <br>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Title</th>
@@ -32,6 +41,4 @@
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Chapter', new_chapter_path %>
+</div>

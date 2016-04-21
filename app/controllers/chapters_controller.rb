@@ -16,21 +16,37 @@ class ChaptersController < ApplicationController
   # GET /chapters/new
   def new
     @chapter = Chapter.new
+    @stories = Story.all
   end
 
   # GET /chapters/1/edit
   def edit
+    @stories = Story.all
   end
 
   # POST /chapters
   # POST /chapters.json
   def create
+    @stories = Story.all
+    @chapters = Chapter.all
     @chapter = Chapter.new(chapter_params)
+
+    number_of_chapters = 1
+
+    @chapters.where(story: @chapter.story).each do
+      number_of_chapters += 1
+    end
+    @chapter.position = number_of_chapters
 
     respond_to do |format|
       if @chapter.save
-        format.html { redirect_to @chapter, notice: 'Chapter was successfully created.' }
-        format.json { render :show, status: :created, location: @chapter }
+        format.html { redirect_to @chapter,
+          notice: 'Chapter was successfully created.'
+        }
+        format.json { render :show,
+          status: :created,
+          location: @chapter
+        }
       else
         format.html { render :new }
         format.json { render json: @chapter.errors, status: :unprocessable_entity }

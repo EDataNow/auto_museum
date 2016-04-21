@@ -11,9 +11,11 @@ class Chapter < ActiveRecord::Base
 # Think about how necessary it is to have uniqueness accross chapters
 # for media_type
   validates :title, :position, :story,  presence: true
-  validates :title, uniqueness: true
-  validates :title, length: { minimum: 5 }
 
+	validates :title, uniqueness: true
+  validates_uniqueness_of :position, scope: :story
+
+	validates :title, length: { minimum: 5 }
   validate :media_type
 
   # this breaks the ordering of chapters
@@ -30,7 +32,7 @@ class Chapter < ActiveRecord::Base
 # errors are a hash and by adding :media_type as a key it allows me to
 # use to search within the assert tests.
     if any_invalid
-      errors.add(:media_type, 'At Least One of Pdf, Video or Audit is needed')
+      errors.add(:media_type, "#{position} At Least One of Pdf, Video or Audit is needed")
     end
   end
 

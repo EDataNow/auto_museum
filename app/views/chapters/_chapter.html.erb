@@ -1,20 +1,19 @@
 
   <tbody>
       <tr>
-        <td><%= chapter.title %></td>
         <td><%= chapter.position %></td>
+        <td><%= chapter.title %></td>
         <td><%= chapter.video %></td>
         <td><%= chapter.pdf %></td>
         <td><%= chapter.audio %></td>
         <td><%= link_to 'Edit', edit_chapter_path(chapter) %></td>
         <td><%= link_to 'Delete', chapter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td>
-
-          <% if Chapter.get_chapter_above chapter %>
-            <%= link_to '&uarr;'.html_safe, up_path(chapter_a: chapter) %>
+          <%= link_to up_path(chapter_a: chapter), class: "btn btn-default" do %>
+            &uarr;
           <% end %>
-          <% if chapter.story.chapters.find_by(position: chapter.position + 1) %>
-            <%= link_to '&darr;'.html_safe, down_path(chapter_a: chapter) %>
+          <%= link_to down_path(chapter_a: chapter), class: "btn btn-default" do %>
+            &darr;
           <% end %>
         </td>
       </tr>

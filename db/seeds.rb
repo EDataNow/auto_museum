@@ -30,17 +30,17 @@ Chapter.create!(title: 'Truck History 2',
                   pdf: 'pdf1-2.pdf',
                 audio: 'audio1-2.mp3',
                 story: story_1)
-Chapter.create!(title: 'Truck History 4',
-             position: 4,
-                video: 'video1-4.mp4',
-                  pdf: 'pdf1-4.pdf',
-                audio: 'audio1-4.mp3',
-                story: story_1)
 Chapter.create!(title: 'Truck History 3',
              position: 3,
                 video: 'video1-3.mp4',
                   pdf: 'pdf1-3.pdf',
                 audio: 'audio1-3.mp3',
+                story: story_1)
+Chapter.create!(title: 'Truck History 4',
+             position: 4,
+                video: 'video1-4.mp4',
+                  pdf: 'pdf1-4.pdf',
+                audio: 'audio1-4.mp3',
                 story: story_1)
 # . . .
 
@@ -69,7 +69,7 @@ Chapter.create!(title: 'Electric Vehicle History',
                 story: story_3)
 
 Chapter.create!(title: 'Electric Vehicle History 2',
-             position: 1,
+             position: 2,
                 video: 'video3-2.mp4',
                   pdf: 'pdf3-2.pdf',
                 audio: 'audio3-2.mp3',
