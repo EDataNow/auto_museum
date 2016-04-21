@@ -19,33 +19,27 @@ class Chapter < ActiveRecord::Base
   validate :media_type
 
   # this breaks the ordering of chapters
-  #mount_uploader :video, VideoUploader
+  mount_uploader :video, VideoUploader
+  mount_uploader :audio, AudioUploader
 
   private
-
   def media_type
-    require 'uri'
-
-    any_invalid = [video, pdf, audio].any? do |media_type|
-      media_type_valid?(media_type) == false
-    end
-# errors are a hash and by adding :media_type as a key it allows me to
-# use to search within the assert tests.
-    if any_invalid
+    unless video.present? ^ pdf.present? ^ audio.present?
       errors.add(:media_type, "#{position} At Least One of Pdf, Video or Audit is needed")
     end
   end
+
 
   def self.swap_position(chapter_a, chapter_b)
   	unless (chapter_a == nil or chapter_b == nil)
       @position_a = chapter_a.position
       @position_b = chapter_b.position
       chapter_a.position = chapter_a.story.chapters.count + 1
-      chapter_a.save
+      chapter_a.save!(validate: false)
       chapter_b.position = @position_a
-      chapter_b.save
+      chapter_b.save!(validate: false)
   		chapter_a.position = @position_b
-  		chapter_a.save
+  		chapter_a.save!(validate: false)
   	end
   end
 
@@ -55,9 +49,5 @@ class Chapter < ActiveRecord::Base
 
   def self.get_chapter_below(chapter)
   	return chapter.story.chapters.find_by(position: chapter.position + 1)
-  end
-
-  def media_type_valid?(media_type)
-    media_type.present?
   end
 end

@@ -1,4 +1,4 @@
-<%= form_for(@chapter) do |f| %>
+<%= form_for @chapter, html: {multipart: true} do |f| %>
   <% if @chapter.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@chapter.errors.count, "error") %> prohibited this chapter from being saved:</h2>
@@ -18,16 +18,20 @@
 
   <div class="form-group">
     <%= f.label :video %><br>
-    <%= f.text_field :video,{class: "form-control"} %>
+    <%= f.file_field :video,{class: ""} %>
   </div>
+
   <div class="form-group">
     <%= f.label :pdf %><br>
     <%= f.text_field :pdf,{class: "form-control"} %>
   </div>
+
   <div class="form-group">
     <%= f.label :audio %><br>
-    <%= f.text_field :audio,{class: "form-control"} %>
+    <%= f.file_field :audio,{class: ""} %>
   </div>
+
+
   <div class="form-group">
     <%= f.label :story %><br>
     <%= f.collection_select :story_id, @stories, :id, :title, {}, {class: "form-control"} %>
@@ -36,7 +40,3 @@
     <%= f.submit %>
   </div>
 <% end %>
-<!-- <div class="field"> -->
-  <%#= f.label :position %>
-  <%#= f.number_field :position %>
-<!-- </div> -->
