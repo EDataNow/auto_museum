@@ -24,12 +24,20 @@
     <div class="container">
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="<% current_page?(stories_path)? 'active' : '' %>">
-          <%= link_to 'Stories', stories_path %>
-        </li>
-        <li class="<% current_page?(chapters_path)? 'active' : '' %>">
-          <%= link_to 'Chapters', chapters_path %>
-        </li>
+        <% if session[:user_id] %>
+          <li class="<% current_page?(stories_path)? 'active' : '' %>">
+            <%= link_to 'Stories', stories_path %>
+          </li>
+          <li class="<% current_page?(chapters_path)? 'active' : '' %>">
+            <%= link_to 'Chapters', chapters_path %>
+          </li>
+          <li>
+            <%= link_to 'Manage Users', users_path %>
+          </li>
+          <li>
+            <%= link_to 'Logout', logout_path, method: :delete %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </nav>
