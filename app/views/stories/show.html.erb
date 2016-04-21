@@ -9,7 +9,6 @@
       <strong>Title:</strong>
       <%= @story.title %>
     </p>
-
     <p>
       <strong>Description:</strong>
       <%= @story.description %>
@@ -35,6 +34,6 @@
   <%= render(@story.chapters) %>
 
 </table>
-<%= link_to 'Edit', edit_story_path(@story) %> | 
+<%= link_to 'Edit', edit_story_path(@story) %> |
 <%= link_to 'Back', stories_path %>
 </div>
