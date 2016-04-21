@@ -1,14 +1,14 @@
-<% if notice %>
-  <p id="notice"><%= notice %></p>
-<% end %>
 
-<br>
 <div class="jumbotron">
   <div class="container">
     <h1>Users List</h1>
   </div>
 </div>
 <div class="container">
+  <% if notice %>
+    <p class="text-danger" id="notice"><%= notice %></p>
+  <% end %>
+
   <p><%= link_to 'New User', new_user_path %></p>
   <br><br>
   <table class="table table-striped">
