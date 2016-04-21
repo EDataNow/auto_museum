@@ -23,7 +23,7 @@
 
   <div class="form-group">
     <%= f.label :pdf %><br>
-    <%= f.text_field :pdf,{class: "form-control"} %>
+    <%= f.file_field :pdf,{class: ""} %>
   </div>
 
   <div class="form-group">
@@ -34,7 +34,8 @@
 
   <div class="form-group">
     <%= f.label :story %><br>
-    <%= f.collection_select :story_id, @stories, :id, :title, {}, {class: "form-control"} %>
+    <%= f.collection_select :story_id, @stories, :id, :title, {
+      :selected => params[:story] }, {class: "form-control"} %>
   </div>
   <div class="actions">
     <%= f.submit %>
