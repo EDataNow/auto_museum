@@ -1,34 +1,44 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @chapter.title %>
-</p>
+<div class="jumbotron">
+  <div class="container">
+    <h1><%= @chapter.title %> Chapter</h1>
+  </div>
+</div>
 
-<p>
-  <strong>Position:</strong>
-  <%= @chapter.position %>
-</p>
 
-<p>
-  <strong>Video:</strong>
-  <%= @chapter.video %>
-</p>
+<div class="container">
+  <table class="table table-stripped">
+    <tr>
+      <th>Titles</th>
+      <th>Values</th>
+    </tr>
+    <tbody>
+      <tr>
+        <td>Position:</td>
+        <td><%= @chapter.position %></td>
+      </tr>
+      <tr>
+        <td>Video:</td>
+        <td><%= @chapter.video %></td>
+      </tr>
+      <tr>
+        <td>Pdf:</td>
+        <td><%= @chapter.pdf %></td>
+      </tr>
+      <tr>
+        <td>Audio:</td>
+        <td><%= @chapter.audio %></td>
+      </tr>
+      <tr>
+        <td>Story:</td>
+        <td><%= @chapter.story.title %></td>
+      </tr>
+    </tbody>
+  </table>
 
-<p>
-  <strong>Pdf:</strong>
-  <%= @chapter.pdf %>
-</p>
 
-<p>
-  <strong>Audio:</strong>
-  <%= @chapter.audio %>
-</p>
+  <%= link_to 'Edit', edit_chapter_path(@chapter) %> |
+  <%= link_to 'Back', chapters_path %>
 
-<p>
-  <strong>Story:</strong>
-  <%= @chapter.story.title %>
-</p>
-
-<%= link_to 'Edit', edit_chapter_path(@chapter) %> |
-<%= link_to 'Back', chapters_path %>
+</div>

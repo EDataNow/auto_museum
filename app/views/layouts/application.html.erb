@@ -8,6 +8,31 @@
 </head>
 <body>
 
+  <nav class="navbar navbar-default navbar-static-top">
+    <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="container">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="<% current_page?(stories_path)? 'active' : '' %>">
+          <%= link_to 'Stories', stories_path %>
+        </li>
+        <li class="<% current_page?(chapters_path)? 'active' : '' %>">
+          <%= link_to 'Chapters', chapters_path %>
+        </li>
+      </ul>
+    </div>
+  </nav>
 <%= yield %>
 
 </body>

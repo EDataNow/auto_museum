@@ -1,7 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe Chapter, type: :model do
-  # pending "add some examples to (or delete) #{__FILE__}"
+
+  before do
+    Story.destroy_all
+  end
+
+  let(:story) { Story.create!(
+          title:   "StoryTitle",
+    description:   "StoryDescription"
+    )
+  }
   let(:valid_attributes) {
     {
          title:   'StoryChapter',
@@ -9,13 +18,13 @@ RSpec.describe Chapter, type: :model do
          video:   'img/video.mp4',
            pdf:   'pdf/pdf.pdf',
          audio:   'audio/audio.mp3',
-         story:   1
+         story:   story
 
     }
   }
-  let(:invalid_attributes) {
+  let(:invalid_title_attributes) {
     {
-         title:   '',
+         title:   'sadd',
       position:   nil,
          video:   '',
            pdf:   '',
@@ -27,20 +36,32 @@ RSpec.describe Chapter, type: :model do
 
   describe "| insertions |" do
     it "attributes can't be blank" do
-      story = Chapter.new
+      chapter = Chapter.new
 
-      assert story.invalid?
-      assert story.errors[:title].any?
-      assert story.errors[:position].any?
-      assert story.errors[:media_type].any?
-      assert story.errors[:story].any?
+      assert chapter.invalid?
+      assert chapter.errors[:title].any?
+      assert chapter.errors[:position].any?
+      assert chapter.errors[:media_type].any?
+      assert chapter.errors[:story].any?
     end
 
-    it "story title minimum is 5 characters"  do
-      story = Chapter.new invalid_attributes
+    it "title minimum is 5 characters"  do
+      chapter = Chapter.new invalid_title_attributes
 
-      assert story.invalid?
-      assert story.errors[:title].any?
+      assert chapter.invalid?
+      assert chapter.errors[:title].any?
     end
+
+    it "position is unique" do
+      #this should fail can't have two chapters
+      #in the same story with the same position
+      chapter = Chapter.new valid_attributes
+      chapter2 = Chapter.new valid_attributes
+
+      assert_equal chapter.position, chapter2.position
+      assert chapter2.valid?
+
+    end
+
   end
 end
