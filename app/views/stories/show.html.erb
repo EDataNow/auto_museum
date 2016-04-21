@@ -17,7 +17,7 @@
 </div>
 
 <div class="container">
-  <p><%= link_to 'New Chapter', new_chapter_path %></p>
+  <p><%= link_to 'New Chapter', new_chapter_path(story: @story.id) %></p>
   <br><br>
   <table class="table table-stripped">
     <thead>
