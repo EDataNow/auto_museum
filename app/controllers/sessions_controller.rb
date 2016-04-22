@@ -24,4 +24,3 @@ class SessionsController < ApplicationController
   	redirect_to login_url, alert: "Logged out"
   end
 end
-

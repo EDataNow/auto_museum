@@ -1,6 +1,6 @@
 class ChaptersController < ApplicationController
   before_action :set_chapter, only: [:show, :edit, :update, :destroy]
-
+  after_filter "save_previous_url", only: [:new]
   # GET /chapters
   # GET /chapters.json
   def index
@@ -11,12 +11,18 @@ class ChaptersController < ApplicationController
   # GET /chapters/1
   # GET /chapters/1.json
   def show
+    @back_to_begining_url = session[:my_previous_url]
   end
 
   # GET /chapters/new
   def new
     @chapter = Chapter.new
     @stories = Story.all
+  end
+
+  def save_previous_url
+    # session[:previous_url] is a Rails built-in variable to save last url.
+    session[:my_previous_url] = URI(request.referer || '').path
   end
 
   # GET /chapters/1/edit
