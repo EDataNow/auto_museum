@@ -3,9 +3,9 @@
       <tr>
         <td><%= chapter.position %></td>
         <td><%= chapter.title %></td>
-        <td><%= chapter.video %></td>
-        <td><%= chapter.pdf %></td>
-        <td><%= chapter.audio %></td>
+        <td><%= chapter.video_identifier %></td>
+        <td><%= chapter.pdf_identifier %></td>
+        <td><%= chapter.audio_identifier %></td>
         <td><%= link_to 'Edit', edit_chapter_path(chapter) %></td>
         <td><%= link_to 'Delete', chapter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td>

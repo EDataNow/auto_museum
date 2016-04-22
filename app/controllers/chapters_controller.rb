@@ -36,13 +36,7 @@ class ChaptersController < ApplicationController
     @stories = Story.all
     @chapters = Chapter.all
     @chapter = Chapter.new(chapter_params)
-
-    number_of_chapters = 1
-
-    @chapters.where(story: @chapter.story).each do
-      number_of_chapters += 1
-    end
-    @chapter.position = number_of_chapters
+    @chapter.position = @chapters.where(story: @chapter.story).count + 1
 
     respond_to do |format|
       if @chapter.save
@@ -75,7 +69,7 @@ class ChaptersController < ApplicationController
   def destroy
     @chapter.destroy
     respond_to do |format|
-      format.html { redirect_to chapters_url, notice: 'Chapter was successfully destroyed.' }
+      format.html { redirect_to :back, notice: 'Chapter was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

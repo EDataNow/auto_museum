@@ -20,12 +20,13 @@ class Chapter < ActiveRecord::Base
 
   # this breaks the ordering of chapters
   mount_uploader :video, VideoUploader
+  mount_uploader :pdf, PdfUploader
   mount_uploader :audio, AudioUploader
 
   private
   def media_type
     unless video.present? ^ pdf.present? ^ audio.present?
-      errors.add(:media_type, "#{position} At Least One of Pdf, Video or Audit is needed")
+      errors.add(:media_type, "#{position} At Least One media type is needed")
     end
   end
 
