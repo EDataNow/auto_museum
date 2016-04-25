@@ -26,7 +26,7 @@ class Chapter < ActiveRecord::Base
   private
   def media_type
     unless video.present? ^ pdf.present? ^ audio.present?
-      errors.add(:media_type, "#{position} At Least One media type is needed")
+      errors.add(:media_type, " At Least One media type is needed")
     end
   end
 

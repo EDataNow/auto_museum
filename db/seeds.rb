@@ -20,70 +20,70 @@ story_3 = Story.create!(title: 'Story3',
 Chapter.delete_all
 Chapter.create!(title: 'Truck History',
              position: 1,
-                video: 'video1-1.mp4',
-                  pdf: 'pdf1-1.pdf',
-                audio: 'audio1-1.mp3',
+                video: '',
+                  pdf: Rails.root.join("public/seed/pdf.pdf").open,
+                audio: '',
                 story: story_1)
 
 Chapter.create!(title: 'Truck History 2',
              position: 2,
-                video: 'video1-2.mp4',
-                  pdf: 'pdf1-2.pdf',
-                audio: 'audio1-2.mp3',
+                video: '',
+                  pdf: Rails.root.join("public/seed/pdf.pdf").open,
+                audio: '',
                 story: story_1)
 
 Chapter.create!(title: 'Truck History 3',
              position: 3,
-                video: 'video1-3.mp4',
-                  pdf: 'pdf1-3.pdf',
-                audio: 'audio1-3.mp3',
+                 video: '',
+                   pdf: Rails.root.join("public/seed/pdf.pdf").open,
+                 audio: '',
                 story: story_1)
 
 Chapter.create!(title: 'Truck History 4',
              position: 4,
-                video: 'video1-4.mp4',
-                  pdf: 'pdf1-4.pdf',
-                audio: 'audio1-4.mp3',
+                 video: '',
+                   pdf: Rails.root.join("public/seed/pdf.pdf").open,
+                 audio: '',
                 story: story_1)
 # . . .
 
 
 Chapter.create!(title: 'Sedan History',
              position: 1,
-                 video: 'sedanVideo2-1.mp4',
-                   pdf: 'sedanPdf2-1.pdf',
-                 audio: 'sedanAudio2-1.mp3',
+                 video: '',
+                   pdf: Rails.root.join("public/seed/pdf.pdf").open,
+                 audio: '',
                 story: story_2)
 
 Chapter.create!(title: 'Sedan History 2',
              position: 2,
-                video: 'sedanVideo2-2.mp4',
-                  pdf: 'sedanPdf2-2.pdf',
-                audio: 'sedanAudio2-2.mp3',
+                 video: '',
+                   pdf: Rails.root.join("public/seed/pdf.pdf").open,
+                 audio: '',
                 story: story_2)
 # . . .
 
 
 Chapter.create!(title: 'Electric Vehicle History',
              position: 1,
-                video: 'video3-1.mp4',
-                  pdf: 'pdf3-1.pdf',
-                audio: 'audio3-1.mp3',
+                video: '',
+                  pdf: Rails.root.join("public/seed/pdf.pdf").open,
+                audio: '',
                 story: story_3)
 
 Chapter.create!(title: 'Electric Vehicle History 2',
-             position: 2,
-                video: 'video3-2.mp4',
-                  pdf: 'pdf3-2.pdf',
-                audio: 'audio3-2.mp3',
-                story: story_3)
+              position: 2,
+                 video: '',
+                   pdf: Rails.root.join("public/seed/pdf.pdf").open,
+                 audio: '',
+                 story: story_3)
 
-Chapter.create!(title: 'Electric Vehicle History 3',
-             position: 3,
-                video: 'video3-3.mp4',
-                  pdf: 'pdf3-3.pdf',
-                audio: 'audio3-3.mp3',
-                story: story_3)
+Chapter.create!( title: 'Electric Vehicle History 3',
+              position: 3,
+                 video: '',
+                   pdf: Rails.root.join("public/seed/pdf.pdf").open,
+                 audio: '',
+                 story: story_3)
 # . . .
 
 User.delete_all
