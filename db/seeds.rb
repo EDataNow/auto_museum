@@ -88,4 +88,4 @@ Chapter.create!( title: 'Electric Vehicle History 3',
 
 User.delete_all
 User.create!(name: 'admin',
-  password_digest: 'admin')
+  password_digest: BCrypt::Password.create('admin'))

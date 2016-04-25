@@ -51,4 +51,9 @@ class Chapter < ActiveRecord::Base
   def self.get_chapter_below(chapter)
   	return chapter.story.chapters.find_by(position: chapter.position + 1)
   end
+
+  def self.rearange_chapter_list(deleted_chapter_index)
+
+    Chapter.find()
+  end
 end
