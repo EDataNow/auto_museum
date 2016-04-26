@@ -20,21 +20,37 @@ require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
 
+  before do
+    allow(User).to receive(:find_by).with(id: 1) { User.new }
+    session[:user_id] = 1
+  end
+
   # This should return the minimal set of attributes required to create a valid
   # User. As you add validations to User, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {
+      name: 'Test',
+      password_digest:  BCrypt::Password.create('password')
+    }
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {
+      name: '',
+      password_digest: ''
+    }
   }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # UsersController. Be sure to keep this updated too.
-  let(:valid_session) { {} }
+  let(:valid_session) { 
+    {
+      name: 'Test',
+      password_digest:  BCrypt::Password.create('password')
+    }
+  }
 
   describe "GET #index" do
     it "assigns all users as @users" do
@@ -83,7 +99,7 @@ RSpec.describe UsersController, type: :controller do
 
       it "redirects to the created user" do
         post :create, {:user => valid_attributes}, valid_session
-        expect(response).to redirect_to(User.last)
+        expect(response).to redirect_to(users_url)
       end
     end
 
@@ -103,7 +119,10 @@ RSpec.describe UsersController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {
+          name: 'Test',
+          password_digest:  BCrypt::Password.create('password')
+        }      
       }
 
       it "updates the requested user" do
@@ -122,7 +141,7 @@ RSpec.describe UsersController, type: :controller do
       it "redirects to the user" do
         user = User.create! valid_attributes
         put :update, {:id => user.to_param, :user => valid_attributes}, valid_session
-        expect(response).to redirect_to(user)
+        expect(response).to redirect_to(users_url)
       end
     end
 

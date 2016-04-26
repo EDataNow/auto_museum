@@ -28,6 +28,11 @@ RSpec.describe ChaptersController, type: :controller do
     Story.destroy_all
   end
 
+  before do
+    allow(User).to receive(:find_by).with(id: 1) { User.new }
+    session[:user_id] = 1
+  end
+
   let(:story) { Story.create!(title: "StoryTitle", description: "StoryDescription")}
 
   let(:valid_attributes) {

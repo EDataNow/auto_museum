@@ -7,8 +7,8 @@ class ApplicationController < ActionController::Base
 
   protected
   	def authorize
-	  unless User.find_by(id: session[:user_id])
-		redirect_to login_url, alert: "Pleas log in"
-	  end
+	   unless User.find_by(id: session[:user_id])
+		  redirect_to login_url, alert: "Pleas log in"
+	   end
   	end
 end
