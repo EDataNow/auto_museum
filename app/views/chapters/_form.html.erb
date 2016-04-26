@@ -13,7 +13,7 @@
 
   <div class="form-group">
     <%= f.label :title %><br>
-    <%= f.text_field :title ,{class: "form-control"}%>
+    <%= f.text_field :title ,{class: "form-control"} %>
   </div>
 
   <div class="form-group">
@@ -24,6 +24,7 @@
   <div class="form-group">
     <%= f.label :pdf %><br>
     <%= f.file_field :pdf,{class: ""} %>
+    <% #f.hidden_field :pdf_cache %>
   </div>
 
   <div class="form-group">

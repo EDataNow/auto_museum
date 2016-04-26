@@ -1,6 +1,6 @@
 class ChaptersController < ApplicationController
   before_action :set_chapter, only: [:show, :edit, :update, :destroy]
-
+  after_filter "save_previous_url", only: [:new]
   # GET /chapters
   # GET /chapters.json
   def index
@@ -11,12 +11,18 @@ class ChaptersController < ApplicationController
   # GET /chapters/1
   # GET /chapters/1.json
   def show
+    @back_to_begining_url = session[:my_previous_url]
   end
 
   # GET /chapters/new
   def new
     @chapter = Chapter.new
     @stories = Story.all
+  end
+
+  def save_previous_url
+    # session[:previous_url] is a Rails built-in variable to save last url.
+    session[:my_previous_url] = URI(request.referer || '').path
   end
 
   # GET /chapters/1/edit
@@ -30,13 +36,7 @@ class ChaptersController < ApplicationController
     @stories = Story.all
     @chapters = Chapter.all
     @chapter = Chapter.new(chapter_params)
-
-    number_of_chapters = 1
-
-    @chapters.where(story: @chapter.story).each do
-      number_of_chapters += 1
-    end
-    @chapter.position = number_of_chapters
+    @chapter.position = @chapters.where(story: @chapter.story).count + 1
 
     respond_to do |format|
       if @chapter.save
@@ -69,7 +69,7 @@ class ChaptersController < ApplicationController
   def destroy
     @chapter.destroy
     respond_to do |format|
-      format.html { redirect_to chapters_url, notice: 'Chapter was successfully destroyed.' }
+      format.html { redirect_to :back, notice: 'Chapter was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   skip_before_action :authorize
+  
   def index
   end
 
@@ -24,4 +25,3 @@ class SessionsController < ApplicationController
   	redirect_to login_url, alert: "Logged out"
   end
 end
-

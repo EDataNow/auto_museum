@@ -14,6 +14,24 @@ Rails.application.routes.draw do
   resources :users
   resources :chapters
   resources :stories
+
+  namespace :api do
+    resources :stories do
+      resources :chapters
+    end
+  end
+  # namespace :api do
+  #   resources :stories do
+  #     resources :chapters only: [:create, :update, :destroy]
+  #   end
+  # end
+  # setting it up to only work under the api subdomain
+  # constraints subdomain: 'api' do
+  #   namespace :api, path: '/' do
+  #     resources :stories
+  #     resources :chapters
+  #   end
+  # end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
