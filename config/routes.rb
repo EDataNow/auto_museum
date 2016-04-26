@@ -16,8 +16,9 @@ Rails.application.routes.draw do
   resources :stories
 
   namespace :api do
-    resources :stories
-    resources :chapters
+    resources :stories do
+      resources :chapters
+    end
   end
   # namespace :api do
   #   resources :stories do
