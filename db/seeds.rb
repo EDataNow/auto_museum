@@ -5,7 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Chapter.delete_all
 Story.delete_all
+User.delete_all
+
 story_1 = Story.create!(title: 'Story1',
                  description: 'Story Onenizzle Lorem ipsizzle dolizzle sizzle daahng dawg,
                                bling bling adipiscing crazy.')
@@ -17,7 +20,7 @@ story_3 = Story.create!(title: 'Story3',
                                bling bling adipiscing crazy.')
 
 
-Chapter.delete_all
+
 Chapter.create!(title: 'Truck History',
              position: 1,
                 video: '',
@@ -86,6 +89,6 @@ Chapter.create!( title: 'Electric Vehicle History 3',
                  story: story_3)
 # . . .
 
-User.delete_all
+
 User.create!(name: 'admin',
   password_digest: BCrypt::Password.create('admin'))
