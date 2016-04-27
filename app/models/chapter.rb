@@ -52,8 +52,12 @@ class Chapter < ActiveRecord::Base
   	return chapter.story.chapters.find_by(position: chapter.position + 1)
   end
 
-  def self.rearange_chapter_list(deleted_chapter_index)
+  def self.rearange_chapter_list(chapters)
 
-    Chapter.find()
+    chapters.each_with_index do |chapter, index|
+      chapter.position = index + 1
+      chapter.save!
+    end
   end
+
 end

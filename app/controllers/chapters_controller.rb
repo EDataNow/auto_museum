@@ -1,6 +1,6 @@
 class ChaptersController < ApplicationController
   before_action :set_chapter, only: [:show, :edit, :update, :destroy]
-  after_filter "save_previous_url", only: [:new]
+  skip_before_action :authorize, only: :index
   # GET /chapters
   # GET /chapters.json
   def index
@@ -67,7 +67,9 @@ class ChaptersController < ApplicationController
   # DELETE /chapters/1
   # DELETE /chapters/1.json
   def destroy
+    @chapters = Chapter.all.where(story: @chapter.story)
     @chapter.destroy
+    Chapter.rearange_chapter_list @chapters
     respond_to do |format|
       format.html { redirect_to :back, notice: 'Chapter was successfully destroyed.' }
       format.json { head :no_content }

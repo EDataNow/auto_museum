@@ -3,7 +3,8 @@ class Api::StoriesController < ApplicationController
   skip_before_filter :verify_authenticity_token
 
   def index
-    render json: Story.all
+    stories = Story.all
+    render json: stories
   end
 
   def show

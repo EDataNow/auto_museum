@@ -1,6 +1,6 @@
 class StoriesController < ApplicationController
   before_action :set_story, only: [:show, :edit, :update, :destroy]
-
+  skip_before_action :authorize, only: :index
   # GET /stories
   # GET /stories.json
   def index
@@ -55,6 +55,7 @@ class StoriesController < ApplicationController
   # DELETE /stories/1.json
   def destroy
     @story.destroy
+    # Story.rearange_chapter_list Story.all
     respond_to do |format|
       format.html { redirect_to stories_url, notice: 'Story was successfully destroyed.' }
       format.json { head :no_content }

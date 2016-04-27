@@ -5,6 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+# Add dependent: :destroy option to your has_many
+# definitions. or reorder the delete methods like below
 Chapter.delete_all
 Story.delete_all
 User.delete_all

@@ -26,6 +26,11 @@ RSpec.describe StoriesController, type: :controller do
   before do
     Story.destroy_all
   end
+  
+  before do
+    allow(User).to receive(:find_by).with(id: 1) { User.new }
+    session[:user_id] = 1
+  end
 
   let(:valid_attributes) {
     {
